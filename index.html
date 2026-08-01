@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- ==========================================
+         CONFIGURACIÓN GENERAL
+    =========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Proyecto FL1305 - Experiencia interactiva para Fernando.">
+
+    <title>FL1305 | Archivo Temporal</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         FONDO ANIMADO
+    =========================================== -->
+
+    <div id="background"></div>
+
+    <!-- ==========================================
+         TRANSICIÓN ENTRE ESCENAS
+    =========================================== -->
+
+    <div id="transition"></div>
+
+<!-- ==========================================
+     ESCENA 1 · AUTENTICACIÓN
+=========================================== -->
+
+<section
+    id="scene1"
+    class="scene active">
+
+    <div class="container">
+
+        <!-- Pulso de energía -->
+
+        <div class="pulse"></div>
+
+        <!-- Título principal -->
+
+        <h1
+            id="systemTitle"
+            class="fade">
+
+            PROYECTO FL1305
+
+        </h1>
+
+        <p class="systemSubtitle fade delay1">
+
+            Archivo Temporal · Acceso Restringido
+
+        </p>
+
+        <div class="separator fade delay1"></div>
+
+        <!-- Consola del sistema -->
+
+        <div
+            id="systemLog"
+            class="fade delay1">
+
+            <!-- Generado por JavaScript -->
+
+        </div>
+
+        <!-- Tarjeta de identidad -->
+
+        <div id="identityCard">
+
+            <span class="identityLabel">
+
+                IDENTIDAD CONFIRMADA
+
+            </span>
+
+            <div class="logo">
+
+                Fernando
+
+            </div>
+
+            <p class="subtitle2">
+
+                Alias: Arañita 🕷
+
+            </p>
+
+            <p class="subtitle2">
+
+                Nivel de acceso:
+                <strong>CDP 🤍🐥</strong>
+
+            </p>
+
+        </div>
+
+        <!-- Botón de acceso -->
+
+        <button id="btnAccess">
+
+            INGRESAR
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     ESCENA 2 · APERTURA DEL EXPEDIENTE
+=========================================== -->
+
+<section
+    id="scene2"
+    class="scene">
+
+    <div class="container timeline">
+
+        <!-- Estado del expediente -->
+
+        <span class="status">
+
+            ARCHIVO CLASIFICADO
+
+        </span>
+
+        <!-- Identificador -->
+
+        <h1 class="logo">
+
+            FL1305
+
+        </h1>
+
+        <div class="scanLine"></div>
+
+        <!-- Título -->
+
+        <h3>
+
+            Expediente del Multiverso
+
+        </h3>
+
+        <!-- Descripción -->
+
+        <p class="description">
+
+            Algunas historias parecen comenzar por casualidad.
+
+            <br><br>
+
+            Otras simplemente estaban destinadas a encontrarse.
+
+            <br><br>
+
+            Este expediente conserva la evidencia de una historia que continúa escribiéndose.
+
+        </p>
+
+        <!-- Botón -->
+
+        <button id="btnStart">
+
+            ABRIR EXPEDIENTE
+
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- ==========================================
+     ESCENA 3 · LÍNEA TEMPORAL
+=========================================== -->
+
+<section
+    id="scene3"
+    class="scene">
+
+    <div class="card">
+
+        <!-- Fecha del registro -->
+
+        <span
+            id="memoryDate"
+            class="date">
+
+            00 · 00 · 0000
+
+        </span>
+
+        <!-- Título del recuerdo -->
+
+        <h2 id="memoryTitle">
+
+            TÍTULO DEL REGISTRO
+
+        </h2>
+
+        <!-- ==========================================
+             POLAROID
+        =========================================== -->
+
+        <div class="polaroid">
+
+            <img
+                id="memoryImage"
+                src=""
+                alt="Recuerdo registrado">
+
+        </div>
+
+        <!-- Descripción -->
+
+        <p
+            id="memoryText"
+            class="memory-text">
+
+            Texto...
+
+        </p>
+
+        <!-- Navegación -->
+
+        <div class="controls">
+
+            <button id="btnPrevious">
+
+                ⟵ ANTERIOR
+
+            </button>
+
+            <button id="btnNext">
+
+                SIGUIENTE ⟶
+
+            </button>
+
+        </div>
+
+        <!-- Indicador -->
+
+        <div
+            id="memoryCounter"
+            class="counter">
+
+            1 / 4
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--============================
+    ESCENA 4
+=============================-->
+
+<section class="scene" id="scene4">
+
+    <div class="container scene4Content">
+
+        <!-- Logo -->
+
+        <h1 class="logo">
+
+            FL1305
+
+        </h1>
+
+        <!-- Panel del sistema -->
+
+        <div
+            id="syncPanel"
+            class="syncPanel">
+
+            <p class="syncTitle">
+
+                SINCRONIZANDO EXPEDIENTE
+
+            </p>
+
+            <div class="progressBar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+            <p
+                id="progressPercent"
+                class="progressPercent">
+
+                0%
+
+            </p>
+
+            <p
+                id="syncMessage"
+                class="syncMessage">
+
+                Inicializando...
+
+            </p>
+
+        </div>
+
+        <!-- Identificación del archivo -->
+
+        <div
+            id="fileInfo"
+            class="fileInfo">
+
+            <div class="infoRow">
+
+                <span class="infoLabel">
+
+                    ORIGEN
+
+                </span>
+
+                <span
+                    id="fileOrigin"
+                    class="infoValue">
+
+                </span>
+
+            </div>
+
+            <div class="infoRow">
+
+                <span class="infoLabel">
+
+                    CLASIFICACIÓN
+
+                </span>
+
+                <span
+                    id="fileType"
+                    class="infoValue">
+
+                </span>
+
+            </div>
+
+            <div class="infoRow">
+
+                <span class="infoLabel">
+
+                    DESTINATARIO
+
+                </span>
+
+                <span
+                    id="fileTarget"
+                    class="infoValue">
+
+                </span>
+
+            </div>
+
+            <div
+                id="accessStatus"
+                class="accessStatus">
+
+            </div>
+
+        </div>
+
+        <!-- Video -->
+
+        <div
+            id="videoWrapper"
+            class="videoWrapper hidden">
+
+            <div class="videoContainer">
+
+        <video
+             id="memoryVideo"
+             controls
+             autoplay
+             preload="metadata"
+             playsinline
+             poster="assets/img/videoPoster.jpg">
+
+                    <source
+                        src="assets/video/fl1305.mp4"
+                        type="video/mp4">
+
+                </video>
+
+            </div>
+
+        </div>
+
+        <!-- Botón -->
+
+        <button
+            id="btnLetter"
+            class="hiddenButton">
+
+            CONTINUAR
+
+        </button>
+    
+     </div>
+
+</section>
+
+<!-- ==========================================
+     ESCENA 5 · CARTA
+=========================================== -->
+
+<section
+    id="scene5"
+    class="scene">
+
+    <div class="container letterScene">
+
+        <span class="status">
+
+            MENSAJE PERSONAL
+
+        </span>
+
+        <h1 class="logo">
+
+            FL1305
+
+        </h1>
+
+        <div class="scanLine"></div>
+
+        <h3>
+
+            Para Fernando
+
+        </h3>
+
+        <div
+            id="letterContent"
+            class="letter">
+
+            <!-- La carta será insertada desde app.js -->
+
+        </div>
+
+        <div class="controls">
+
+            <button id="btnFinal">
+
+                FINALIZAR EXPEDIENTE
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     ESCENA 6 · CIERRE
+=========================================== -->
+
+<section
+    id="scene6"
+    class="scene">
+
+    <div class="container">
+
+        <h1 class="logo">
+
+            PROYECTO FL1305
+
+        </h1>
+
+        <div class="separator"></div>
+
+        <p class="description">
+
+            SALTO TEMPORAL COMPLETADO.
+
+        </p>
+
+        <br><br>
+
+        <p class="description">
+
+            Gracias por aceptar escribir esta historia conmigo.
+
+        </p>
+
+        <br><br>
+
+        <h2 class="subtitle">
+
+            La historia continúa... ∞
+
+        </h2>
+
+        <div class="controls">
+
+            <button id="btnRestart">
+
+                ❤️ VOLVER A EMPEZAR
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     MÚSICA DE FONDO
+=========================== -->
+
+<audio
+    id="backgroundMusic"
+    preload="auto"
+    loop>
+
+    <source
+        src="assets/audio/background.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<script src="app.js"></script>
+
+</body>
+</html>
